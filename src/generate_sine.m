@@ -1,4 +1,4 @@
-function x = generate_sine(amplitude, frequency, phase, fs, duration)
+function x = generate_sine(amplitude, frequency, phase, fs, duration, duty)
 %GENERATE_SINE:Arthur Lu returns a matrix of sampled sine wave, where the
 %phase shift is in number of periods
     x = zeros(1, fs * duration);

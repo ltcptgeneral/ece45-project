@@ -6,7 +6,7 @@
  
  ## Function Prototypes
  
- function x = generate_wave(amplitude, frequency, phase, fs, duration, duty)
+function x = generate_wave(amplitude, frequency, phase, fs, duration, duty)
  
 fuction x = envelope(input, fs, period, attack , decay, sustain, release)
 where attack, decay, sustain release are percentages between 0 to 1 of the period

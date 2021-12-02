@@ -29,7 +29,7 @@ decay = 0.2;
 sustain = 0.2;
 release = 0.1;
 
-x = DarellEnvelope(x, fs, attack,decay,sustain,release);
+x = DarellPitchEnvelope(x, fs, attack,decay,sustain,release); %output new sound in time domain
 %play over 5 counts, should only hear 200hz
 playtime = 5;
 play_continuous(x, fs, playtime)

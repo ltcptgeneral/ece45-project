@@ -1,4 +1,4 @@
-function output = DarellEnvelope(input, Fs, attack,decay,sustain,release) %percentages for attack, decay, sustain, release
+function output = DarellPitchEnvelope(input, Fs, attack,decay,sustain,release) %percentages for attack, decay, sustain, release
     len = length(input);
     T = (len-1)/Fs;
     attacktime = attack * T * Fs;

@@ -11,7 +11,7 @@ duty = 0;
 x = generate_sine(amplitude, frequency, phase, fs, duration, duty);
 x = x + generate_sine(amplitude, (frequency+5), phase, fs, duration, duty);
 
-%play over 5 counts, should hear both frequencies, 5 beats between the 2 frequencies
+%play over 5 counts, should hear both frequencies, 5 beats per second between the 2 frequencies
 playtime = 5;
 play_continuous(x, fs, playtime)
 

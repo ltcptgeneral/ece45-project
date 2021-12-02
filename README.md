@@ -6,14 +6,16 @@
  
  ## Function Prototypes
  
- function x = generate_wave(amplitude, frequency, phase, fs, duration, duty)
+function x = generate_wave(amplitude, frequency, phase, fs, duration, duty)
  
 fuction x = envelope(input, fs, period, attack , decay, sustain, release)
-where attack, decay, sustain release are percentages between 0 to 1 of the period
-where period is the time in seconds
+where attack, decay, release are percentages between 0 to 1 of the period
+sustain is the percentage of the amplitude it should sustain for
+**envelope can be pitch or amplitude envelope**
 
 function  output_timedomain = Filter(input_soundin_timedomain, Fs, LOW, MED, HIGH) 
-where LOW, MED, HIGH are user-selected variables of any value. **try to make an envelope for the filter as well**
+where LOW, MED, HIGH are user-selected variables of any value. 
+**output should be in time domain for all functions (new sound)**
  
  ## Useful websites
  

@@ -33,4 +33,3 @@ x = DarellAmplitudeEnvelope(x, fs, attack,decay,sustain,release); %output new so
 %play over 5 counts, should only hear 200hz
 playtime = 5;
 play_continuous(x, fs, playtime)
-

@@ -20,19 +20,22 @@ function x = generate_sawtooth(amplitude, frequency, phase, fs, duration, duty)
     % initialize a one dimensional zero matrix to be populated
     x = zeros(1, n);
     
+    
     % populate the matrix
     for i = 1:n
         t = i * dt; % time of the i'th sample
         st = mod(frequency * t - phase, 1); % Progression through cycle
         
         slope = 2 * amplitude / period; % the incline slope from start to amplitude
+        mid = period / 2;
+        
         %part before the straght vertical line
-        if(st < period /2)
+        if(st < mid)
             x(i) = slope * st;
         
         %part after the straght vertical line
         else
-            x(i) = slope * st - amplitude;
+            x(i) = slope * (st - 0.5) - amplitude;
         
     end
 end

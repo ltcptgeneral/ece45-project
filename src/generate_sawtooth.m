@@ -3,7 +3,6 @@ function x = generate_sawtooth(amplitude, frequency, phase, fs, duration, duty)
 
 % CONTRIBUTORS:
 % Ben Zhang: Function author
-% Arthur Lu: Format author
 
 % DOCUMENTATION:
 % phase shift is in number of periods
@@ -31,11 +30,11 @@ function x = generate_sawtooth(amplitude, frequency, phase, fs, duration, duty)
         
         %part before the straght vertical line
         if(st < mid)
-            x(i) = slope * st;
+            x(i) = slope * st; % amplitude from start to +amplitude
         
         %part after the straght vertical line
         else
-            x(i) = slope * (st - 0.5) - amplitude;
+            x(i) = slope * (st - 0.5) - amplitude; %amplitude from -amplitude to start
         
     end
 end

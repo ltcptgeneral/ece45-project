@@ -11,8 +11,6 @@ duty = 0;
 x = generate_sine(amplitude, frequency, phase, fs, duration, duty);
 x = x + generate_sine(amplitude, (frequency+5), phase, fs, duration, duty);
 
-size(x)
-
 %play over 5 counts, should hear both frequencies, 5 beats per second between the 2 frequencies
 playtime = 5;
 play_continuous(x, fs, playtime)
@@ -35,4 +33,3 @@ x = DarellAmplitudeEnvelope(x, fs, attack,decay,sustain,release); %output new so
 %play over 5 counts, should only hear 200hz
 playtime = 5;
 play_continuous(x, fs, playtime)
-

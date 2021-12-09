@@ -1,4 +1,5 @@
 %Written by Darell and Anne
+%This envelope uses linear calculations
 
 function output = DarellAnnePitchEnvelope(input, Fs, attack,decay,sustain,release) %percentages for attack, decay, sustain, release
     len = length(input);

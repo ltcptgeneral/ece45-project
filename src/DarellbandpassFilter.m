@@ -1,3 +1,15 @@
+%Written by Darell 
+%uses fourier transform to get the series of all signals
+
+% CONTRIBUTORS:
+% Person1: Darell
+
+% DOCUMENTATION:
+% fs is the sampling frequency
+% y is the signal input
+% LOW and HIGH are used for the band of frequency
+% MEDIUM IS NOT USED
+
 function output_y = DarellbandpassFilter(y,Fs,LOW,MED,HIGH)
     Len = length(y);
     F = Fs * (-Len/2 : (Len/2 - 1))/Len ;

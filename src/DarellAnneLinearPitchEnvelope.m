@@ -1,4 +1,19 @@
 %Written by Darell and Anne
+%If there is a frequency of 200Hz:
+%1. it needs to ramp up a frequency from 0Hz to the 200Hz over the attack time
+%2. It needs to ramp down to a set sustained frequency over the decay time e.g. 160Hz < 200Hz
+%3. It maintains this 160Hz until the release time
+%4. Release time: It decays from 160Hz further all the way back to 0Hz. 
+%This envelope uses linear calculations
+
+% CONTRIBUTORS:
+% Person1: Darell
+% Person2: Anne
+
+% DOCUMENTATION:
+% fs is the sampling frequency
+% attack, decay, release are in percentages of the period
+% sustain is in the percentage of amplitude
 
 function output = DarellAnneLinearPitchEnvelope(input, Fs, attack,decay,sustain,release) %percentages for attack, decay, sustain, release
     len = length(input);

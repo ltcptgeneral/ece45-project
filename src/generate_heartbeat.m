@@ -1,8 +1,9 @@
-function x = generate_heart_monitor(amplitude, frequency, phase, fs, duration, duty)
+function x = generate_heartbeat(amplitude, frequency, phase, fs, duration, duty)
 % GENERATE_SINE: returns a matrix of sampled heart monitor wave
 
 % CONTRIBUTORS:
 % Alex Nguyen: Original Author
+% Conner Hsu: Reviewed Code and Assisted in polishing
 
 % DOCUMENTATION:
 % phase shift is in number of periods

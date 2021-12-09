@@ -1,3 +1,11 @@
+%Written by Darell 
+
+% CONTRIBUTORS:
+% Person1: Darell
+
+% DOCUMENTATION:
+%Pass-through function used by app
+
 function output = SoundGeneratorSelect(amplitude, frequency, phase, fs, duration, duty,number)
     if(number == "Option 1")
         output = generate_sine(amplitude, frequency, phase, fs, duration, duty);

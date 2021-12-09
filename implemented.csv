@@ -1,0 +1,8 @@
+amplifyFreqRange.m, Filter, Connor Hsu
+DarellAmplitudeEnvelope.m, AmpEnvelope, Darrell Chua
+DarellAnnePitchEnvelope.m, PitchEnvelope, Darrel Chua / Anne Lin
+DarellbandpassFilter.m, Filter, Darrel Chua
+generate_sawtooth, Generator, Ben Zhang
+generate_sine, Generator, Arthur Lu / Benjamin Liou
+generate_square, Generator, Arthur Lu / Benjamin Liou
+generate_white, Generator, Benjamin Liou

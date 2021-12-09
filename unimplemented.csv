@@ -1,0 +1,14 @@
+add_sine.m
+amplify.m
+bandreject_filter.m
+Daniel_Doan_convolution.m
+epic_effect_schluep.m
+fade_in.m
+fade_out.m
+generate_halfCircles.m
+lfo_sawtooth.m
+lfo_sine.m
+muffled_effect_schluep.m
+Petha_Hsu_PitchOffset.m
+reverse.m
+seperate_prevalent_schluep.m

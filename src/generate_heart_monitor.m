@@ -19,6 +19,7 @@ function x = generate_heart_monitor(amplitude, frequency, phase, fs, duration, d
     n = fs * duration; % number of samples (length of matrix)
     dt = 1 / fs; % sampling period: time between two sample points
     
+    
     % initialize a one dimensional zero matrix to be populated
     x = zeros(1, n);
     
@@ -27,16 +28,15 @@ function x = generate_heart_monitor(amplitude, frequency, phase, fs, duration, d
         t = i * dt; % time at the i'th sample
         st = mod(frequency * t - phase, 1);
 
-        if (duty-0.1 < st && st < duty)
+        if (duty-0.25 < st && st < duty)
             slope = amplitude / duty;
             intercept = -0.5 * amplitude;
             x(i) = slope * st + intercept;
-        elseif (duty < st && st < duty+0.1) 
-            slope = -amplitude / duty;
-            intercept = amplitude * (duty/(1-duty) + 0.5);
-            x(i) = slope * st + intercept;
+        elseif (duty < st && st < duty+0.25) 
+            slope = amplitude / duty;
+            intercept = -amplitude;
+            x(i) = slope * st + (1.5 * intercept);
         else
             x(i) = 0;
     end
 end
-

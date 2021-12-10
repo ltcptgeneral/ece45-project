@@ -19,6 +19,10 @@ function output = FilterSelect(input,Fs,LOW,MED,HIGH,number)
         output = seperate_prevalent_schluep(input, Fs, LOW, MED, HIGH);
     elseif(number == "Option 6")
         output = bandreject_filter(input, Fs, LOW, HIGH);
+    elseif(number == "Option 7")
+        output = AnuragEnhanceTarget(input, Fs, LOW,MID, HIGH);
+    elseif(number == "Option 8")
+        output = AnuragDampenTarget(input, Fs, LOW,MID, HIGH);
     else
         output = input;
     end

@@ -21,6 +21,6 @@ function output = SoundGeneratorSelect(amplitude, frequency, phase, fs, duration
     elseif(number == "HalfCircle")
         output = generate_halfCircles(amplitude, frequency, phase, fs, duration, duty);
     else
-        output = 0;
+        output = zeros(1, fs * duration);
     end
 end

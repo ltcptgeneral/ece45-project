@@ -23,6 +23,10 @@ function output = fade_out(input, time)
 
     % fade out effect: from full volume of signal to no volume
     multiplier = flip(multiplier)
+    
+    while length(multiplier) < len
+        multiplier = [multiplier 0];
+    end 
 
     % the resulting fade-in output  
     output = input .* multiplier;

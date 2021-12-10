@@ -11,18 +11,29 @@ function output = fade_out(input, time)
     
     len = length(input);
     
+    % need to use time as a whole number
+    time = round(time);
+    
     % if time parameter longer than signal, treat time as
     % the duration of original signal
     if time > len
         time = len
     end
 
+    % in order to create array, time >=1
+    % if not, it's arbitrarily set to 1
+    % in which case the fade_in effect
+    % is virtually nonexistent
+    if time < 1
+        time = 1;
+    end
+    
     % set multiplier as 1D array
 
     multiplier = (1 : time) / time;
 
     % fade out effect: from full volume of signal to no volume
-    multiplier = flip(multiplier)
+    multiplier = flip(multiplier);
     
     while length(multiplier) < len
         multiplier = [multiplier 0];

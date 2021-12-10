@@ -18,7 +18,7 @@ function output = SoundGeneratorSelect(amplitude, frequency, phase, fs, duration
         output = generate_sawtooth(amplitude, frequency, phase, fs, duration, duty);
     elseif(number == "WhiteNoise")
         output = generate_white(amplitude, fs, duration);
-    elseif(number == "HalfCircles")
+    elseif(number == "HalfCircle")
         output = generate_halfCircles(amplitude, frequency, phase, fs, duration, duty);
     else
         output = 0;

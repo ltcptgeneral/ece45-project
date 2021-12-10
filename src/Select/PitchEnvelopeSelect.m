@@ -7,9 +7,9 @@
 %Pass-through function used by app
 
 function output = PitchEnvelopeSelect(input, Fs, attack,decay,sustain,release,number)
-    if(number == "Option 1")
+    if(number == "Logarithmic")
         output = DarellAnnePitchEnvelope(input, Fs, attack,decay,sustain,release);
-    elseif(number == "Option 2")
+    elseif(number == "Linear")
         output = DarellAnneLinearPitchEnvelope(input, Fs, attack,decay,sustain,release);
     else
         output = input;

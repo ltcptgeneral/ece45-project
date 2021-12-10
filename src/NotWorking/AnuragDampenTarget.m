@@ -26,7 +26,6 @@ function output_x = AnuragDampenTarget(x, Fs,LOW, MID, HIGH)
             output(n) = 1;
         end
     end
-
 %%Filter the original signal and transform 
     filtered_Mod_Freq = fftshift(Mod_Freq .* output);
     output_x = real(ifft(filtered_Mod_Freq));

@@ -15,6 +15,7 @@ function output_x = AnuragEnchanceTarget(x, Fs,LOW, MID, HIGH)
     lenf = length(F);
     Mod_Freq = fftshift(fft(x)); %Fourier Transform of the input signal
     output =  zeros([1,lenf]); % zero array of size Mod_freq
+
     %set the bounds
     lowerBound = (1-AreaPercentage) * TARGET;
     upperBound = (1+AreaPercentage) * TARGET;

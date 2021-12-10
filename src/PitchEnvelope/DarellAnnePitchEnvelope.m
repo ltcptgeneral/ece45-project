@@ -4,6 +4,7 @@
 %2. It needs to ramp down to a set sustained frequency over the decay time e.g. 160Hz < 200Hz
 %3. It maintains this 160Hz until the release time
 %4. Release time: It decays from 160Hz further all the way back to 0Hz. 
+%This envelope uses logarithmic calculations
 
 % CONTRIBUTORS:
 % Person1: Darell

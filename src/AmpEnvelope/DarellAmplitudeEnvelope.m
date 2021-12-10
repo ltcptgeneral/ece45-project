@@ -1,3 +1,14 @@
+%Written by Darell
+%Creates a Linear Amplitude Envelope 
+
+% CONTRIBUTORS:
+% Person1: Darell
+
+% DOCUMENTATION:
+% fs is the sampling frequency
+% attack, decay, release are in percentages of the period
+% sustain is in the percentage of amplitude
+
 function output = DarellAmplitudeEnvelope(input, Fs, attack,decay,sustain,release) %percentages for attack, decay, sustain, release
     len = length(input);
     T = (len-1)/Fs;

@@ -1,4 +1,4 @@
-function output_y = bandreject_filter(Input, Fs, Low, High)
+function Output = bandreject_filter(Input, Fs, Low, High)
     % A filter that lets through most frequencies unaltered
     % but attentuates the frequencies in the specified range to
     % very low levels

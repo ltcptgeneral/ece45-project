@@ -1,4 +1,4 @@
-function output_x = AnuragEnchanceTarget(x, Fs,TARGET, AreaPercentage) 
+function output_x = AnuragEnchanceTarget(x, Fs,LOW, MID, HIGH) 
 %Amplify a range of frequencies a percentage around the target frequency
 %Also damnpen the other frequencies so that the target is easier to hear
 %percentage is expressed as a number between 0 and 1.
@@ -8,6 +8,8 @@ function output_x = AnuragEnchanceTarget(x, Fs,TARGET, AreaPercentage)
 % Anurag Jadhav: function creator
 
 %   Detailed explanation goes here
+    TARGET = MID;
+    AreaPercentage = 0.15;
     [dim,len] = size(x); %get length of the input
     F = Fs * ((-len/2) : ((len/2) - 1)) / len;
     lenf = length(F);

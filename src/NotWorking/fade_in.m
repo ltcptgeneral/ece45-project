@@ -21,7 +21,10 @@ function output = fade_in(input, time)
     % set multiplier as 1D array
     % fade in effect: from no volume to full volume of signal
     multiplier = (1 : time) / time;
-
+    
+    while length(multiplier) < len
+        multiplier = [multiplier 1];
+    end
     % the resulting fade-in output  
     output = input .* multiplier;
 end

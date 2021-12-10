@@ -20,6 +20,14 @@ function output = SoundGeneratorSelect(amplitude, frequency, phase, fs, duration
         output = generate_white(amplitude, fs, duration);
     elseif(number == "HalfCircle")
         output = generate_halfCircles(amplitude, frequency, phase, fs, duration, duty);
+    elseif(number == "Trapezoid")
+        output = generate_trapezoid(amplitude, frequency, phase, fs, duration, duty);
+    elseif(number == "Pulse")
+        output = generate_pulse(amplitude, frequency, phase, fs, duration, duty);
+    elseif(number == "Cosine")
+        output = generate_cosine(amplitude, frequency, phase, fs, duration, duty);
+    elseif(number == "Heartbeat")
+        output = generate_heartbeat(amplitude, frequency, phase, fs, duration, duty);
     else
         output = zeros(1, fs * duration);
     end

@@ -9,9 +9,9 @@
 function output = LFOSelect(amplitude, frequency, phase, fs, duration, input,number)
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
-    if(number == "Option 1")
+    if(number == "Sawtooth")
         output = lfo_sawtooth(amplitude, frequency, phase, fs, duration, input);
-    elseif(number == "Option 2")
+    elseif(number == "Sine")
         output = lfo_sine(amplitude, frequency, phase, fs, duration, input);
     else
         output = input;

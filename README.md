@@ -6,7 +6,7 @@
  Will add member names shortly
  
  ## Function Prototypes
-Templates to create your own functions.
+Templates to create your own functions. Please commit code in either src/ or src/NotWorking.
 
  ### Wave generating function
 ```

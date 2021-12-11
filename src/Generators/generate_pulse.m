@@ -1,5 +1,5 @@
 function x = generate_pulse(amplitude, frequency, phase, fs, duration, duty)
-% GENERATE_WAVENAME: returns a matrix of sampled WAVENAME wave
+% GENERATE_pulse: returns a matrix of sampled pulse wave
 
 % CONTRIBUTORS:
 % Brian Tran: Creator

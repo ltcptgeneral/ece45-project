@@ -37,18 +37,21 @@ function x = generate_trapezoid(amplitude, frequency, phase, fs, duration, duty)
         st = mod(frequency * t - phase, 1);
         slope = (amplitude/2) / (duty/8);
         if(st < duty)
-            if(st < duty/8 || st > 7*duty/8)
+            if(st <= duty/8)
                 x(i) = slope * st;
             else
-                if(st < 5*duty/8)
+                if(st <= 5*duty/8)
                     x(i) = amplitude/2 - slope * (st-(3*duty/8));
                 end
-                if(st < 3*duty/8)
+                if(st <= 3*duty/8)
                     x(i) = amplitude/2;
                 end
-                if(st > 5*duty/8)
+                if(st >= 5*duty/8)
                     x(i) = -amplitude/2;
                 end
+            end
+            if(st >= 7* duty/8)
+                x(i) = -amplitude/2 + slope*(st-(7*duty/8));
             end
         end
     end

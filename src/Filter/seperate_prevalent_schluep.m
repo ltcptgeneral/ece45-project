@@ -14,13 +14,22 @@ function output = seperate_prevalent_schluep(input, Fs, LOW, MED, HIGH)
 % not be attenuated. A good range of values is usually 250-500 Hz, but it
 % depends on the input sound.
 
-non_stereophonic = input(:, 1);     % Removes the sterophonic property of the input sound
-% by just taking the first column of data.
+n = size(input, 2);
 
-Len = length(non_stereophonic);
+non_stereophonic = input;
+
+if (n == 1) || (n == 2) 
+    non_stereophonic = input(:, 1);     % Removes the sterophonic property of the input sound
+    % by just taking the first column of data.
+    non_stereophonic = transpose(non_stereophonic); 
+end
+
+modified_input = non_stereophonic(1, :);
+
+Len = length(modified_input);
 F = Fs * ((-Len/2) : ((Len/2) - 1)) / Len;  % Creating the array of frequencies
 % which the FFT Shifted version of the signal can be plotted against.
-inputFreq = fftshift(fft(non_stereophonic));   % Creates the Fourier Transform of the
+inputFreq = fftshift(fft(modified_input));   % Creates the Fourier Transform of the
 % input signal. fftshift() makes it such that the zero frequency is at the 
 % center of the array.
 bandPassFilter = zeros(1, length(inputFreq));
@@ -53,9 +62,11 @@ for i = 1:length(bandPassFilter)
     end
 end
 
-bandPassedInput = inputFreq .* transpose(bandPassFilter); %Apply the Band-Pass Filter.
+bandPassedInput = inputFreq .* bandPassFilter; %Apply the Band-Pass Filter.
 
 output = real(ifft(fftshift(bandPassedInput)));
+
+end
 
 
 

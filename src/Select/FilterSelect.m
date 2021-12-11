@@ -21,12 +21,11 @@ function output = FilterSelect(input,Fs,LOW,MED,HIGH,number)
     %}
     elseif(number == "IdealBandReject")
         output = bandreject_filter(input, Fs, LOW, HIGH);
-    %{
+    
     elseif(number == "EnchanceTarget")
         output = AnuragEnhanceTarget(input, Fs, LOW, MED, HIGH);
     elseif(number == "DampenTarget")
         output = AnuragDampenTarget(input, Fs, LOW, MED, HIGH);
-    %}
     else
         output = input;
     end

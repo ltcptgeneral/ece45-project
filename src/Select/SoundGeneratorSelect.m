@@ -28,6 +28,34 @@ function output = SoundGeneratorSelect(amplitude, frequency, phase, fs, duration
         output = generate_cosine(amplitude, frequency, phase, fs, duration, duty);
     elseif(number == "Heartbeat")
         output = generate_heartbeat(amplitude, frequency, phase, fs, duration, duty);
+
+    % instruments:
+    elseif(number == "ArcoStrings")
+        output = generate_arcoStrings(amplitude, frequency, phase, fs, duration, duty);
+    elseif(number == "Bassoon")
+        output = generate_bassoon(amplitude, frequency, phase, fs, duration, duty);
+    elseif(number == "Clarinet")
+        output = generate_clarinet(amplitude, frequency, phase, fs, duration, duty);
+    elseif(number == "Flute")
+        output = generate_flute(amplitude, frequency, phase, fs, duration, duty);
+    elseif(number == "Horn")
+        output = generate_horn(amplitude, frequency, phase, fs, duration, duty);
+    elseif(number == "Oboe")
+        output = generate_oboe(amplitude, frequency, phase, fs, duration, duty);
+    elseif(number == "Organ")
+        output = generate_organ(amplitude, frequency, phase, fs, duration, duty);
+    elseif(number == "Saxophone")
+        output = generate_saxophone(amplitude, frequency, phase, fs, duration, duty);
+    elseif(number == "ShepardsCarillon")
+        output = generate_shepardsCarillon(amplitude, frequency, phase, fs, duration, duty);
+    elseif(number == "ShepardsOrgan")
+        output = generate_shepardsOrgan(amplitude, frequency, phase, fs, duration, duty);
+    elseif(number == "ShepardsStrings")
+        output = generate_shepardsStrings(amplitude, frequency, phase, fs, duration, duty);
+    elseif(number == "Trumpet")
+        output = generate_trumpet(amplitude, frequency, phase, fs, duration, duty);
+    elseif(number == "TubularBells")
+        output = generate_tubularBells(amplitude, frequency, phase, fs, duration, duty);
     else
         output = zeros(1, fs * duration);
     end

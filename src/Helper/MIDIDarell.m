@@ -1,6 +1,6 @@
 function output = MIDIDarell(dur,Fs)
 %Darell Chua Yun Da
-%   Detailed explanation goes here
+%   Use Qwerty Keys for each sound frequency.
 
     freq = [330 350 370 392 415 440 466 494 523 554];
     charls = ["q" "w" "e" "r" "t" "y" "u" "i" "o" "p"];

@@ -23,6 +23,11 @@ function output = FilterSelect(input,Fs,LOW,MED,HIGH,number)
         output = AnuragEnhanceTarget(input, Fs, LOW, MED, HIGH);
     elseif(number == "DampenTarget")
         output = AnuragDampenTarget(input, Fs, LOW, MED, HIGH);
+    elseif(number == "Distortion")
+        if(LOW == 0)
+            LOW = 1;
+        end
+        output = distortion_filter(input, Fs, LOW, MED, HIGH);
     else
         output = input;
     end

@@ -56,6 +56,9 @@ function output = SoundGeneratorSelect(amplitude, frequency, phase, fs, duration
         output = generate_trumpet(amplitude, frequency, phase, fs, duration, duty);
     elseif(number == "TubularBells")
         output = generate_tubularBells(amplitude, frequency, phase, fs, duration, duty);
+
+    elseif(number == "Keyboard")
+        output = generate_keyboard(amplitude, frequency, phase, fs, duration, duty);
     else
         output = zeros(1, fs * duration);
     end

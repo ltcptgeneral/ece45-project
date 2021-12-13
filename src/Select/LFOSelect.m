@@ -9,10 +9,13 @@
 function output = LFOSelect(amplitude, frequency, phase, fs, duration, input,number)
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
-    if(number == "AmplitudeSawtooth")
+    if(number == "AmplitudeSine")
         output = lfo_sawtooth(amplitude, frequency, phase, fs, duration, input);
-    elseif(number == "AmplitudeSine")
+    elseif(number == "AmplitudeSquare")
+        output = lfo_square(amplitude, frequency, phase, fs, duration, input);
+    elseif(number == "AmplitudeSawtooth")
         output = lfo_sine(amplitude, frequency, phase, fs, duration, input);
+    
     elseif(number == "FrequencySine")
         output = lfo_freq_sine(amplitude, frequency, phase, fs, duration, input);
     elseif(number == "FrequencySquare")

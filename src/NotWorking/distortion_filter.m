@@ -1,30 +1,23 @@
-% An audio is distorted based on the value of HIGH. Nothing of a certain
-% threshold should be played above this constant, or they are simply clipped to this 
-% value. Inspired from Meghaj_Echo.m and epic_effect_schluep.m.
-% Author: Jason Liang
-% Mekhi Ellington: Added some comments and editted formatting
-
-function y = distortion_filter(x, HIGH)
-  len = length(X);    %Storing length of X.
-  X = fft(x);         %X is the Fourier Transform of x.
-  X = fftshift(X);    %Shifts X.
-  Y = zeros(1, len);  %Matrix of length containing zeros.
-  
-  for ind = 1:len
-    if (X(ind) > HIGH) 
-       Y(ind) = HIGH;
-
-    elseif (X(ind) < -HIGH)
-      Y(ind) = -HIGH;
-
-    else 
-      Y(ind) = X(ind);
-
+function y = distortion_filter(input, fs, LOW, MED, HIGH)
+    %Author: Jason Liang
+    %input: 1D array representing the sound signal in the time domain
+    %fs: sampling frequency
+    %low: lower bound of frequencies
+    %med: median of all frequencies
+    %high: upper bound of frequencies
+    %y: output signal 
+    %This function distorts a signal based on the constant LOW; all
+    %frequencies in between the specified range are clipped by the constant
+    %LOW.
+    
+    len = length(input);
+    f = fs*(-len/2:len/2-1)/len;
+    
+    outputW = fftshift(fft(input));
+    for i = 1:length(outputW)
+       if ((LOW < abs(F(n))) && HIGH > abs(F(n))) 
+           outputW(i) = outputW(i) / LOW;
+       end
     end
-  end
-  
-  Y = fftshift(Y); %Shifts Y.
-  y = ifft(Y); %Inverse Fourier Transform of Y.
-  y = real(y); %Stores only the real part of the complex y.
-
+    y = real(ifft(fftshift(outputW)));
 end

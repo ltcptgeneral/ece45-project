@@ -15,7 +15,7 @@ function y = distortion_filter(input, fs, LOW, MED, HIGH)
     
     outputW = fftshift(fft(input));
     for i = 1:length(outputW)
-       if ((LOW < abs(F(n))) && HIGH > abs(F(n))) 
+       if ((LOW < abs(f(i))) && HIGH > abs(f(i))) 
            outputW(i) = outputW(i) / LOW;
        end
     end

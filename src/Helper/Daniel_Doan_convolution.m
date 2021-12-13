@@ -5,7 +5,7 @@ function x = Daniel_Doan_convolution(f,h)
     %author: Daniel Doan
 
     %padding to ensure the entire convolution is calculated
-    pad = length(f) + length(h) - 1;
+    pad = length(f);
     %take FT of f
     F = fft(f, pad);
     %take FT of h

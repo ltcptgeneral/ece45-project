@@ -42,7 +42,6 @@ function output = DarellAnnePitchEnvelope(input, Fs, attack,decay,sustain,releas
     while tcounter <= curr
         ncount = round(sustain*curr*(1-log(tcounter)/log(prevcur)) + prevcur);
         tcounter = round(tcounter);
-        output(tcounter)
         output(tcounter) = input(ncount);
         tcounter = tcounter+1;
     end

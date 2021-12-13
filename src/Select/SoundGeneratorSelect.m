@@ -28,6 +28,17 @@ function output = SoundGeneratorSelect(amplitude, frequency, phase, fs, duration
         output = generate_cosine(amplitude, frequency, phase, fs, duration, duty);
     elseif(number == "Heartbeat")
         output = generate_heartbeat(amplitude, frequency, phase, fs, duration, duty);
+    elseif(number == "Harmonics")
+        u = floor(phase);
+        o = floor(duty);
+        undertones = zeros(1, u);
+        overtones = zeros(1, o);
+        for i=1:u
+            undertones(i) = 1/i;
+            overtones(i) = i;
+        end
+        harmonics = [undertones, overtones];
+        output = add_sine(amplitude, frequency, harmonics, fs, duration);
 
     % instruments:
     elseif(number == "ArcoStrings")

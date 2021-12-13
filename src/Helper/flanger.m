@@ -31,7 +31,7 @@ osc_wave = abs(sin(2*pi*index*(osc_freq/Fs)));
 % convert delay in time to delay in samples
 sample_delay=round(time_delay*Fs);
 % create empty output array
-output = zeros(len,1);
+output = zeros(1, len);
 
 % Generating delay for each sample from reference oscillation wave
 % start loop at sample_delay to make sure delayed sample is from t>=0

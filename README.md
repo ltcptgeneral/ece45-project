@@ -1,6 +1,8 @@
 # ECE45-project
 
- Audio synthesizer project created by ECE 45 students, written using the MATLAB language and MATLAB GUI
+ Audio synthesizer project created by ECE 45 students, written using the MATLAB language and MATLAB GUI.
+ 
+ The project has been submitted, and the repository has been archived. Great work everyone!
  
  ## Contributors
  

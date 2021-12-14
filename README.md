@@ -3,6 +3,8 @@
  Audio synthesizer project created by ECE 45 students, written using the MATLAB language and MATLAB GUI
  
  ## Contributors
+ 
+ To be Updated
  ```
 Anne Lin: The various pitch envelope functions could be incorporated into apps that have sound warping functionality. This could include apps such as Snapchat or TikTok where they have various filters that can warp one’s voice for a certain amount of time.
 

@@ -1,13 +1,12 @@
 # ECE45-project
 
- Audio synthesizer project created by ECE 45 students, written using the MATLAB language and MATLAB GUI.
+ Audio synthesizer project created by ECE 45 students, written using the MATLAB language and MATLAB GUI. Refer to the [writeup](https://docs.google.com/document/d/e/2PACX-1vRtwPITEnNgeDQYebnDpnPfZVANtMwlxmwCSED1xUDSGX1I5sZoGS-eaei-uj1CBg5ASOSuldcZhKPa/pub) for more information and usage guidelines.
  
  The project has been submitted, and the repository has been archived. Great work everyone!
  
  ## Contributors
- 
- To be Updated
- ```
+ Brief summary of contributors and their contributions. 
+
 Anne Lin: I co-authored “DarellAnneLinearPitchEnvelope.m” and “DarellAnnePitchEnvelope.m” with Darell. The pitch envelope ramps up the frequency from 0Hz to the desired frequency over the attack time. The frequency is then ramped down to a sustainable frequency (such as 160Hz). The sustainable frequency is maintained until the release time. At the release time, the frequency decays to 0Hz.  “DarellAnnePitchEnvelope.m” uses logarithmic calculations and  “DarellAnneLinearPitchEnvelope.m” uses linear calculations.
 
 Anurag Jadhav: I authored “AnuragEnhanceTarget.m” and “AnuragDampenTarget.m”  which enhance or dampen a range of frequencies around the given frequencies while letting the other frequencies through the filter. 
@@ -42,45 +41,23 @@ Ryan Goh: I authored the “generate_keybaord.m” function which produces a sou
 Wesley Hsu: Co-authored the Petha_Hsu_PitchOffset.m file which was a pitch offset function with shifting by harmonics. This function is used primarily, as its name states, to change the pitch of the sound from high to lower frequency. During my time working with Pethaperumal, I was the one who solved a problem regarding changing to a lower pitch using a floor function. We also provided plots of the adjustments in order to visualize the pitch changes.
 
 Yalu Ouyang: I am the original author of fade_in.m, fade_out.m, and bandreject_filter.m files. True to their names, the fade_in() function creates a fade-in audio effect that modifies a given input signal, the fade_out()  function creates a fade-out audio effect that that modifies a given input signal, and bandreject_filter() eliminates (attenuates to 0) frequencies of the input signal in a specified range. I’ve also edited the README file so that it’s more descriptive of our project, and added several helpful sites found in the project guidelines file.
-```
+
+
+## Abridged Writeup
+The [writeup](https://docs.google.com/document/d/e/2PACX-1vRtwPITEnNgeDQYebnDpnPfZVANtMwlxmwCSED1xUDSGX1I5sZoGS-eaei-uj1CBg5ASOSuldcZhKPa/pub) includes usage, documentation, citations.
  
  ## Function Prototypes
 Templates to create your own functions. Please commit code in either src/ (the base directopry) or src/NotWorking (please dont commit in any other subfolder).
 
  ### Wave generating function
 ```
-function x = generate_WAVENAME(amplitude, frequency, phase, fs, duration, duty)
-% GENERATE_WAVENAME: returns a matrix of sampled WAVENAME wave
-
-% CONTRIBUTORS:
-% Person1: how you contributed
-% Person2: how you contributed
-% etc
-
-% DOCUMENTATION:
-% phase shift is in number of periods
-% fs is the sampling frequency: how many sample points per second
-% duration is time in seconds
-% duty is a number between 0 and 1
-
-    % initialize local variables from input arguments
-    n = fs * duration; % number of samples (length of matrix)
-    dt = 1 / fs; % sampling period: time between two sample points
-    
-    % initialize a one dimensional zero matrix to be populated
-    x = zeros(1, n);
-    
-    % populate the matrix
-    for i = 1:n
-        YOUR CODE HERE
-    end
-end
+function x = generate_NAME(amplitude, frequency, phase, fs, duration, duty)
 ```
 NOTE: duty does not apply to some functions (such as sinusoids)
 
  ### Envelope function
 ```
-function x = envelope(input, fs, period, attack , decay, sustain, release)
+function x = envelope_NAME(input, fs, period, attack , decay, sustain, release)
 ```
 where attack, decay, release are percentages between 0 to 1 of the period
 sustain is the percentage of the amplitude it should sustain for
@@ -89,7 +66,7 @@ sustain is the percentage of the amplitude it should sustain for
 
 ### Filter function
 ```
-function  output_timedomain = Filter(input_soundin_timedomain, Fs, LOW, MED, HIGH) 
+function x = Filter_NAME(input_soundin_timedomain, Fs, LOW, MED, HIGH) 
 ```
 where LOW, MED, HIGH are user-selected variables of any value. 
 **output should be in time domain for all functions (new sound)**
